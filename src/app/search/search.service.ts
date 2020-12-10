@@ -9,17 +9,25 @@ import { map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class SearchService {
-  private SERVER_URL = 'http://localhost:3000/';
+  //private SERVER_URL = 'http://localhost:3000/';
+  private SERVER_URL = 'https://floating-woodland-95039.herokuapp.com/api/property/';
 
   constructor(private http: HttpClient) {}
 
   private selectedOption = new BehaviorSubject<SearchOption>({
     id: null,
-    name: null,
-    description: null,
+    street_address: null,
+    city: null, 
+    province: null, 
+    country: null,
+    image: null,
+    university: null,
+    available_date: null,
     price: null,
-    imageUrl: null,
-    quantity: null,
+    number_of_bedrooms: null,
+    number_of_bathrooms: null,
+    kitchen: null,
+    parking: null
   });
 
   private selectedOptions = new BehaviorSubject<SearchOption[]>([]);
@@ -33,7 +41,7 @@ export class SearchService {
 
   search(q: string): Observable<SearchOption[]> {
     return this.http.get<SearchOption[]>(
-      this.SERVER_URL + 'products?name_like=' + q
+      this.SERVER_URL + 'university/' + q
     );
   }
 

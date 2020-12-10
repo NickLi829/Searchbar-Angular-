@@ -8,9 +8,11 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './shared/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HouseDetailComponent } from './house-detail/house-detail.component';
+
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent],
+  declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent, HouseDetailComponent],
   imports: [BrowserModule, AppRoutingModule, SearchModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],

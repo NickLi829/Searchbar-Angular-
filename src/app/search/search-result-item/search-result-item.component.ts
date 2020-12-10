@@ -8,6 +8,7 @@ import { SearchService } from '../search.service';
 })
 export class SearchResultItemComponent implements OnInit {
   constructor(public searchService: SearchService) {}
-
+ 
   ngOnInit(): void {}
 }
+ 

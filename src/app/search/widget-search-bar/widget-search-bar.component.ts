@@ -52,12 +52,19 @@ export class WidgetSearchBarComponent implements OnInit {
     this.searchService.options$ = this.searchService.search(f.value.search);
 
     this.searchService.updateSelectedOption({
-      id: null,
-      name: null,
-      description: null,
-      price: null,
-      imageUrl: null,
-      quantity: null,
+    id: null,
+    street_address: null,
+    city: null, 
+    province: null, 
+    country: null,
+    image: null,
+    university: null,
+    available_date: null,
+    price: null,
+    number_of_bedrooms: null,
+    number_of_bathrooms: null,
+    kitchen: null,
+    parking: null
     });
 
     this.searchService.isOptionsEmpty$ = this.searchService.options$.pipe(
