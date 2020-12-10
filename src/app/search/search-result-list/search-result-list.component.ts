@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../search.service';
+import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -9,7 +10,14 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./search-result-list.component.scss'],
 })
 export class SearchResultListComponent implements OnInit {
-  constructor(public searchService: SearchService) {}
+  constructor(public searchService: SearchService,
+    private router: Router) {}
 
   ngOnInit(): void {}
+
+  viewUniversity(item) {
+    // this.searchService.updateSelectedOption(item);
+    this.searchService.setCurrentOption(item);
+    this.router.navigateByUrl('/search-results-item');
+  }
 }

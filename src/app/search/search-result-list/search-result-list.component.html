@@ -15,11 +15,11 @@
 					<div class=" col-3 p-4">
 						
 					</div>
-					<div class="col-9 p-4">
+					<div class="col-9 p-4" style="cursor: pointer;" (click)="viewUniversity(item)">
 						<h5>{{item.university}}</h5>
 						<p>{{item.street_address}}</p>
 						<p>
-							<span>Price: {{item.price}} </span>
+							<span>Price: {{item.price | currency}} </span>
 
 						</p>
 					</div>

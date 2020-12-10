@@ -1,23 +1,43 @@
 <div class="mt-4 mb-4" *ngIf="searchService.option$ | async as selectedOption">
-	<header *ngIf="selectedOption.id">
+	<header *ngIf="currentOption._id">
 		<h3>Selected Property</h3>
 	</header>
 	<div class="card">
-		<div class="row" *ngIf="selectedOption.id">
+		<div class="row" *ngIf="currentOption._id">
 			<div class=" col-3 p-4">
-				
+				<img src={{currentOption.image}} />
 			</div>
 			<div class="col-9 p-4">
-				<h5>{{selectedOption.university}}</h5>
-				
-				<p>{{selectedOption.street_address}}</p>
-				<p>
-
-					<span>Price: {{selectedOption.price}} </span>
-					
-					
-
-				</p>
+				<h5>{{currentOption.university}}</h5>
+				<p>{{currentOption.street_address}} {{currentOption.city}} {{currentOption.province}}</p>
+				<table class="table-borderless">
+					<tbody>
+						<tr>
+							<td class="w-25">Price: </td>
+							<td>{{currentOption.price | currency}}</td>
+						</tr>
+						<tr>
+							<td class="w-25">Available date: </td>
+							<td>{{currentOption.available_date | date}}</td>
+						</tr>
+						<tr>
+							<td class="w-25">Kitchen: </td>
+							<td>{{currentOption.kitchen ? 'Individual' : 'Shared'}}</td>
+						</tr>
+						<tr>
+							<td class="w-25">Bathrooms: </td>
+							<td>{{currentOption.number_of_bathrooms}}</td>
+						</tr>
+						<tr>
+							<td class="w-25">Bedrooms: </td>
+							<td>{{currentOption.number_of_bedrooms}}</td>
+						</tr>
+						<tr>
+							<td class="w-25">Parking: </td>
+							<td>{{currentOption.parking ? 'Yes' : 'No'}}</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</div>

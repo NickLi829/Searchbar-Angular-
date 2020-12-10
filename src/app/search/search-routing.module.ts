@@ -5,7 +5,7 @@ import { SearchResultItemComponent } from './search-result-item/search-result-it
 
 const routes: Routes = [
   { path: 'search-results-list', component: SearchResultListComponent },
-  { path: 'search-results-item', component: SearchResultItemComponent },
+  { path: 'search-results-item', component: SearchResultItemComponent }
 ];
 
 @NgModule({
