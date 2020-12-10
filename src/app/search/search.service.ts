@@ -52,4 +52,14 @@ export class SearchService {
   updateSelectedOptions(options: SearchOption[]) {
     this.selectedOptions.next(options);
   }
+
+
+  // can't make observable working well, alternative as follows
+  private currentOption = null;
+  setCurrentOption(item) {
+    this.currentOption = item;
+  }
+  getCurrentOption() {
+    return this.currentOption;
+  }
 }

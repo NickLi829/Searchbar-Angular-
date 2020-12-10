@@ -7,8 +7,13 @@ import { SearchService } from '../search.service';
   styleUrls: ['./search-result-item.component.scss'],
 })
 export class SearchResultItemComponent implements OnInit {
-  constructor(public searchService: SearchService) {}
- 
-  ngOnInit(): void {}
+  constructor(public searchService: SearchService) {
+    this.currentOption = this.searchService.getCurrentOption();
+    console.log(this.currentOption);
+  }
+  public currentOption;
+  ngOnInit(): void {
+    
+  }
 }
  
